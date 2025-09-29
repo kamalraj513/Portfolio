@@ -26,6 +26,7 @@ const onSubmit = async (event) => {
 
     if (res.success) {
       alert(res.message);
+      event.target.reset();
     }
   };
 
