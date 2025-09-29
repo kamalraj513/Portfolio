@@ -1,0 +1,113 @@
+.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px; /* reduced gap */
+  padding: 40px 20px; /* optional padding to reduce height */
+}
+
+.hero img {
+  margin-top: 20px;   /* reduced top margin */
+  height: 250px;      /* smaller image */
+  width: 200px;
+  border-radius: 30px; 
+  border: 1px solid white;
+}
+
+.hero h1 {
+  text-align: center;
+  width: 80%;
+  font-size: 40px;    /* smaller font */
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #ff8dc7, #c471ed, #3f51b5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  width: 70%;         /* slightly smaller width */
+  text-align: center;
+  font-size: 16px;    /* smaller text */
+  line-height: 28px;  /* reduced line height */
+  margin: 5px 0;
+}
+
+.hero-action {
+  display: flex;
+  align-items: center;
+  gap: 15px;          /* smaller gap */
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 30px;  /* reduced bottom space */
+}
+
+.hero-connect,
+.hero-resume {
+  padding: 15px 30px; /* smaller buttons */
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-connect {
+  background: linear-gradient(90deg, #ff8dc7, #c471ed, #3f51b5);
+}
+
+.hero-resume {
+  border: 2px solid white;
+}
+
+.hero-connect:hover {
+  border: 2px solid white;
+  transform: scale(1.05);
+}
+
+.hero-resume:hover {
+  border: 2px solid #6b41bf;
+  transform: scale(1.05);
+}
+
+.hero-resume a {
+  text-decoration: none;
+  color: white;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media(max-width:768px) {
+  .hero img {
+    margin-top: 30px;
+    width: 160px;       /* smaller on mobile */
+    height: 160px;
+  }
+
+  .hero h1 {
+    width: 90%;
+    font-size: 30px;    /* smaller heading */
+    margin-top: 20px;
+  }
+
+  .hero p {
+    font-size: 14px;    /* smaller text */
+    line-height: 24px;
+    margin: 5px 0;
+  }
+
+  .hero-action {
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .hero-connect,
+  .hero-resume {
+    padding: 12px 25px;
+    border-radius: 35px;
+  }
+}

@@ -1,0 +1,136 @@
+/* =========================
+   Navbar Styles
+   ========================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto;          /* ✅ center instead of huge fixed margins */
+  padding: 0 40px;            /* ✅ controlled padding */
+  max-width: 1200px;          /* ✅ keeps navbar contained */
+  box-sizing: border-box;    
+   /* ✅ prevents overflow */
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 60px;
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+.image {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;        /* ✅ reduced margin */
+}
+
+.nav-connect {
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ff8dc7, #c471ed, #3f51b5);
+  transition: 0.3s ease;
+  color: white;
+  border: none;
+}
+
+.nav-connect:hover {
+  transform: scale(1.05);
+  border: 2px solid white;
+}
+
+.bar {
+  text-decoration: none;
+  color: white;
+}
+
+.active {
+  font-weight: 700;
+  color: #ffdf6c;       /* ✅ highlight instead of font-size change */
+}
+
+.nav-menu li {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* ✅ keeps icons aligned */
+  gap: 5px;
+}
+
+.nav-menu li img {
+  margin: auto;
+}
+
+.nav-menu li:hover {
+  transform: scale(1.1);
+}
+
+/* =========================
+   Mobile Responsive
+   ========================= */
+.nav-mob-close,
+.nav-mob-open {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    margin: 10px 20px;
+    padding: 0 20px;
+  }
+
+  .nav-connect {
+    display: none;
+  }
+
+  .nav-mob-open {
+    display: block;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .nav-mob-close {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -350px;          /* ✅ hidden by default */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    background: linear-gradient(90deg, #ff8dc7, #c471ed, #3f51b5);
+    width: 280px;
+    height: 100%;
+    z-index: 1000;
+    padding: 80px 30px;
+    transition: right 0.4s ease-in-out;
+  }
+
+  .nav-menu.open {
+    right: 0;              /* ✅ add .open dynamically with JS/React */
+  }
+
+  .nav-menu li {
+    font-size: 18px;
+    flex-direction: row;
+    gap: 15px;
+    padding: 10px 0;
+  }
+}
